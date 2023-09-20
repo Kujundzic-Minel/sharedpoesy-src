@@ -57,18 +57,14 @@ export default {
 
 
 
-    //method to logout 
+
+
+
+
     async logout() {
-      await pb.collection("users").logout();
+      await pb.authStore.clear();
       document.getElementById("status").innerHTML = "You are now logged out";
     },
-
-
-
-
-
-
-
 
 
 
