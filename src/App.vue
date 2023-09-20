@@ -57,18 +57,10 @@ export default {
 
 
 
-    export: {
-      methods: {
-        async logout() {
-          try {
-
-            await pb.logout(); 
-            document.getElementById("status").innerHTML = "You are now logged out";
-          } catch (error) {
-            console.error("Error logging out:", error);
-          }
-        }
-      }
+    //method to logout 
+    async logout() {
+      await pb.collection("users").logout();
+      document.getElementById("status").innerHTML = "You are now logged out";
     },
 
 
